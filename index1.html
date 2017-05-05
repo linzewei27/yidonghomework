@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{margin:0;padding:0}
+        ul{list-style:none}
+        video{
+            position: absolute;
+            width: 100%;
+        }
+        video:nth-of-type(2){
+            position: absolute;
+            width: 100%;
+        }
+        audio{
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-left: -100px;
+            border:20px solid transparent;
+            border-image-source: url(images/border.png);
+            border-image-width: 40px;
+            border-image-slice: 33%;
+
+            border-image-repeat:repeat;
+        }
+        img{
+            position: absolute;
+            width: 50px;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+<video src="./video/home_loop_720p.mp4" autoplay></video>
+<video src="./video/home_loop_720p.mp4" autoplay></video>
+<video src="./video/home_loop_720p.mp4" autoplay></video>
+<audio src="./audio/Tolein%20-%20金蛇狂舞.mp3" controls></audio>
+<a href="./index2.html"><img src="./images/03.jpg" alt=""></a>
+<script>
+    window.onload = function(){
+        var video = document.querySelectorAll("video");
+        video[1].style.top = video[0].offsetHeight+"px";
+        video[2].style.top = video[1].offsetHeight+video[0].offsetHeight+"px";
+    }
+</script>
+</body>
+</html>
